@@ -17,7 +17,10 @@
     "type": "git",
     "url": "git+https://github.com/Slordef/ver.git"
   },
-  "keywords": ["versionning", "version"],
+  "keywords": [
+    "versioning",
+    "version"
+  ],
   "author": {
     "name": "Slordef",
     "email": "contact@slordef-webmaster.ch"
@@ -26,5 +29,13 @@
   "bugs": {
     "url": "https://github.com/Slordef/ver/issues"
   },
-  "homepage": "https://github.com/Slordef/ver#readme"
+  "homepage": "https://github.com/Slordef/ver#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "moment": "^2.29.1"
+  }
 }

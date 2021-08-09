@@ -1,4 +1,4 @@
-# Ver - App Versionning Manager
+# Ver - App Versioning Manager
 Automatically manage application version, installation via a batch file, version selection and rollback
 For the moment, simple in design to be useful in all situations.
 Creation of symbolic links for the redirection on the application and of a "versions" folder for the various versions available
