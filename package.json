@@ -1,0 +1,20 @@
+{
+  "name": "ver",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/ver.js",
+  "bin": {
+    "ver": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slordef/ver.git"
+  },
+  "keywords": ["versionning", "version"],
+  "author": "Slordef",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slordef/ver/issues"
+  },
+  "homepage": "https://github.com/Slordef/ver#readme"
+}
