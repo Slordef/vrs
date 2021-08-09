@@ -34,19 +34,19 @@ For rollback `ver rollback` or forward `ver forward`. You can set an index of ro
 You can modify the `ver.config.json` as you want with these params :
 ```
 {
-  "config": "ver.config.json", /* only .json file */
+  "config": "ver.config.json",              /* only .json file */
   "conserve": 3,
-  "name": "ver-tests", // unique
+  "name": "ver-tests",                      // unique
   "path": "PATH_TO_THE_FOLDER",
-  "repo": { // object, null
+  "repo": {                                 // object, null
     "build": true,
     "copyFolder": "./dist",
     "path": "./repo",
     "script": "build"
   },
-  "useFile": "js", // none, bash, js
-  "file": "exec.js", // not required if useFile is to "none"
-  "versions": [ // set by ver for kept tracking
+  "useFile": "js",                          // none, bash, js
+  "file": "exec.js",                        // useless if useFile is to "none"
+  "versions": [                             // set by ver for kept tracking
     {
       "current": false,
       "dir": "20210809204707"
