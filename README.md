@@ -32,9 +32,9 @@ For new version, type `ver new` in folder or `ver new -n [nameofservice]`
 For rollback `ver rollback` or forward `ver forward`. You can set an index of rollback `ver rb --set 0`. For rollback with delete the current version `ver rollback --delete` or `ver rb -d`
 
 You can modify the `ver.config.json` as you want with these params :
-```json
+```
 {
-  "config": "ver.config.json", // only .json file
+  "config": "ver.config.json", /* only .json file */
   "conserve": 3,
   "name": "ver-tests", // unique
   "path": "PATH_TO_THE_FOLDER",
