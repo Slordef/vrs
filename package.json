@@ -1,7 +1,14 @@
 {
   "name": "ver",
   "version": "0.0.1",
-  "description": "",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "description": "Version manager for any project using bash as config",
   "main": "./lib/ver.js",
   "bin": {
     "ver": "./bin/index.js"
@@ -11,7 +18,10 @@
     "url": "git+https://github.com/Slordef/ver.git"
   },
   "keywords": ["versionning", "version"],
-  "author": "Slordef",
+  "author": {
+    "name": "Slordef",
+    "email": "contact@slordef-webmaster.ch"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Slordef/ver/issues"
