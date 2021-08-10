@@ -1,5 +1,5 @@
 {
-  "name": "ver",
+  "name": "vers",
   "version": "0.0.1",
   "engines": {
     "node": ">=10.0.0"
@@ -9,13 +9,13 @@
     "lib": "./lib"
   },
   "description": "Version manager for any project using bash as config",
-  "main": "./lib/ver.js",
+  "main": "./lib/vers.js",
   "bin": {
-    "ver": "./bin/index.js"
+    "vers": "./bin/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Slordef/ver.git"
+    "url": "git+https://github.com/Slordef/vers.git"
   },
   "keywords": [
     "versioning",
@@ -27,9 +27,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Slordef/ver/issues"
+    "url": "https://github.com/Slordef/vers/issues"
   },
-  "homepage": "https://github.com/Slordef/ver#readme",
+  "homepage": "https://github.com/Slordef/vers#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "clear": "^0.1.0",
