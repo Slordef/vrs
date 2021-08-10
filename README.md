@@ -24,19 +24,20 @@ Tree Structure :
 | - current => ./versions/[version]
 | - versions
   | - [version]
-| - ver.config.json 
+| - vers.config.json 
 ```
 
-For new version, type `ver new` in folder or `ver new -n [nameofservice]`
+For new version, type `vers new` in folder or `vers new -n [nameofservice]`
 
-For rollback `ver rollback` or forward `ver forward`. You can set an index of rollback `ver rb --set 0`. For rollback with delete the current version `ver rollback --delete` or `ver rb -d`
+For rollback `vers rollback` or forward `vers forward`. You can set an index of rollback `vers rb --set 0`. For rollback with delete the current version `vers rollback --delete` or `vers rb -d`
 
+For reset information in vers service, use `vers reset`. Answer questions for done.
 ## Still to do
 - [x] Simply do what i expect for the moment
 - [ ] Implementation of file (bash or js)
 - [ ] Get all versions of service
 - [ ] Setup service or ver globals 
-- [ ] Redefine init with questions
+- [x] Redefine init with questions
 - [ ] Many other features
 
 ## Contribute
