@@ -32,12 +32,15 @@ For new version, type `vers new` in folder or `vers new -n [nameofservice]`
 For rollback `vers rollback` or forward `vers forward`. You can set an index of rollback `vers rb --set 0`. For rollback with delete the current version `vers rollback --delete` or `vers rb -d`
 
 For reset information in vers service, use `vers reset`. Answer questions for done.
+
+Vers can be run on background with `vers [cmd] --no-process` or `-np`. With this, no result will be show and main process stop right after command.
 ## Still to do
 - [x] Simply do what i expect for the moment
 - [ ] Implementation of file (bash or js)
-- [ ] Get all versions of service
-- [ ] Setup service or ver globals 
+- [x] Get all versions of service
+- [x] Set vers globals system 
 - [x] Redefine init with questions
+- [ ] Logs
 - [ ] Many other features
 
 ## Contribute
