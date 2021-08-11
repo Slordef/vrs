@@ -1,0 +1,41 @@
+{
+  "name": "vrs",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "description": "Version manager for any project using bash as config",
+  "main": "./lib/vrs.js",
+  "bin": {
+    "vrs": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slordef/vrs.git"
+  },
+  "keywords": [
+    "versioning",
+    "version"
+  ],
+  "author": {
+    "name": "Slordef",
+    "email": "contact@slordef-webmaster.ch"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slordef/vrs/issues"
+  },
+  "homepage": "https://github.com/Slordef/vrs#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "moment": "^2.29.1"
+  }
+}
