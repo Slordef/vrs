@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const vers = require('../lib/vers')
-vers.execute(process.argv.slice(2))
+const vrs = require('../lib/vrs')
+vrs.execute(process.argv.slice(2))
