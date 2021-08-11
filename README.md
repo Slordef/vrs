@@ -6,7 +6,7 @@ Creation of symbolic links to redirect on the application folder and of a "versi
 Definition of the number of versions kept in order to allow the rollback in the fastest way.
 Creation of logs for each version installed and registered.
 
-Based on nodejs, required.
+**Based on nodejs, required.**
 
 ## Installation
 Use the package manager [NPM](https://www.npmjs.com/) for install `vrs`
