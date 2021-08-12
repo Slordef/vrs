@@ -12,7 +12,7 @@
   "description": "Version manager for any project using bash as config",
   "main": "./lib/vrs.js",
   "bin": {
-    "vrs": "./bin/index.js"
+    "vrs": "bin/vrs.js"
   },
   "repository": {
     "type": "git",
