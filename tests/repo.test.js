@@ -1,30 +1,38 @@
 const { expect } = require('chai')
 const { execute, DOWN, ENTER, SPACE } = require('./process')
 const fs = require("fs");
-const inquirer = require('inquirer')
-const { parse } = require('../lib/questions')
-const { format } = require('../lib/format')
+const { exec } = require('child_process')
 
-describe('Test all cmd', function () {
-    this.timeout(20000)
-    let backup
-    before((done) => {
-        backup = inquirer.prompt
+describe("Test Service with repository", function () {
+    this._timeout = 20000
+
+    before(async (done) => {
         if(!fs.existsSync(__dirname+'/servertest')) fs.mkdirSync(__dirname+'/servertest')
         done()
     })
     beforeEach(async () => {
         await new Promise(res => { setTimeout(() => { res() },1000) })
     })
-    it("should show nothing with cmd test", (done) => {
-        execute(['test']).then(result => {
-            expect(result).to.contain('nothing to do...')
-            done()
+    it("should create repository for git", (done) => {
+        if(fs.existsSync(__dirname+'/servertest/repo')) return done(new Error('repo exists'))
+        const git = 'https://github.com/Slordef/app-test-node.git'
+        exec('git --help', {}, (e,r,o) => {
+            console.log(e,r,o)
+            expect(e).to.be.null
+            if (e) done('Error')
+
+            const child = exec(`git clone --bare ${git} repo`, { cwd: __dirname+'/servertest'}, (err, stderr, stdout) => {
+                console.log(err,stderr, stdout)
+                if (err || stderr) done('Error')
+            })
+            child.on('exit', () => {
+                console.log('test')
+                done()
+            })
         })
     })
-    it("should initialize default service", (done) => {
-        inquirer.prompt = () => Promise.resolve(parse(format()))
-        execute(['init'], [ENTER,ENTER,ENTER,ENTER,ENTER,ENTER]).then(result => {
+    it("should initialize service with repo", (done) => {
+        execute(['init'], [ENTER,ENTER,ENTER,ENTER,'y',ENTER,ENTER,ENTER,ENTER,ENTER]).then(result => {
             expect(result).to.contain('VRS initialized for :')
             done()
         })
@@ -32,7 +40,7 @@ describe('Test all cmd', function () {
     it("should return service information", (done) => {
         execute(['service']).then(result => {
             expect(result).to.contain.all.string(
-                'VRS Service :', 'path', 'name', 'versions', '=> current'
+                'VRS Service :', 'path', 'name', 'versions', 'repo', '=> current'
             )
             done()
         })
@@ -50,7 +58,6 @@ describe('Test all cmd', function () {
         })
     })
     it("should delete service", (done) => {
-        inquirer.prompt = () => Promise.resolve({delete: ['service', 'versions', 'config']})
         execute(['delete'],[DOWN, SPACE, DOWN, SPACE, ENTER]).then(result => {
             expect(result).to.contain.all.string(
                 'versions folder with content files are removed',
@@ -61,6 +68,6 @@ describe('Test all cmd', function () {
         })
     })
     after(() => {
-        inquirer.prompt = backup
+        if(fs.existsSync(__dirname+'/servertest')) fs.rmdirSync(__dirname+'/servertest', { recursive:true })
     })
 })
