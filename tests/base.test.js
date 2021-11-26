@@ -7,6 +7,7 @@ describe('Test all cmd', function () {
     const dir = __dirname+'\\servertest'
     this._timeout = 20000
     let first = ''
+    let third = ''
     before((done) => {
         if(!fs.existsSync(dir)) fs.mkdirSync(dir)
         done()
@@ -60,13 +61,23 @@ describe('Test all cmd', function () {
     })
     it("should create a third new version", (done) => {
         execute(['new']).then(result => {
+            const match = result.match(/current : .+\\(\d+)/i)
+            expect(match).to.be.not.false
+            third = match[1]
+            expect(third).to.be.not.null
             expect(result).to.contain('VRS : New Version')
             done()
         })
     })
     it("should set to first version", (done) => {
-        execute(['set', '0']).then(result => {
+        execute(['set', first]).then(result => {
             expect(result).to.contain(`${first}`)
+            done()
+        })
+    })
+    it("should set to third version", (done) => {
+        execute(['set', '2']).then(result => {
+            expect(result).to.contain(`${third}`)
             done()
         })
     })
