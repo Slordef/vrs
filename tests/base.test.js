@@ -54,6 +54,6 @@ describe('Test all cmd', function () {
         })
     })
     after(() => {
-        if(fs.existsSync(__dirname+'/servertest')) fs.rmdirSync(__dirname+'/servertest', { recursive:true })
+        if(fs.existsSync(__dirname + '/servertest')) fs.rmSync(__dirname + '/servertest', { recursive:true })
     })
 })
