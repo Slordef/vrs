@@ -31,7 +31,7 @@ function execute(args = [], inputs = []) {
                         setTimeout(() => {
                             childProcess.stdin.write(inp)
                             res()
-                        }, 1000)
+                        }, 300)
                     }),
                     null
                 )
